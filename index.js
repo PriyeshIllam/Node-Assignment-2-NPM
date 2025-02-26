@@ -1,25 +1,21 @@
-require('dotenv').config();
-const express = require('express');
+const express = require("express");
+const path = require("path");
+
 const app = express();
-const moviesRouter = require('./routes/movies');
-const showsRouter = require('./routes/shows');
 
-const PORT = process.env.PORT || 3000;
-
-// Set view engine
-app.set('view engine', 'ejs');
+// Set the views directory explicitly
+app.set("views", path.join(__dirname, "views"));
+app.set("view engine", "ejs");
 
 // Serve static files
-app.use(express.static('public'));
+app.use(express.static(path.join(__dirname, "public")));
 
 // Routes
-app.use('/movies', moviesRouter);
-app.use('/shows', showsRouter);
-
-app.get('/', (req, res) => {
-    res.render('home');
+app.get("/", (req, res) => {
+    res.render("home"); // Ensure home.ejs exists in the views folder
 });
 
+const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
-    console.log(`Server running at http://localhost:${PORT}`);
+    console.log(`Server running on port ${PORT}`);
 });
