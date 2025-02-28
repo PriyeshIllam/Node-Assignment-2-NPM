@@ -13,9 +13,9 @@ app.set("view engine", "ejs");
 // Serve static files
 app.use(express.static(path.join(__dirname, "public")));
 
-// Routes
+// Home Route
 app.get("/", (req, res) => {
-    res.render("home"); // Ensure home.ejs exists in the views folder
+    res.render("home", { movies, shows });
 });
 
 // Movies Route - Pass the data

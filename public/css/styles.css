@@ -1,6 +1,7 @@
 body {
     font-family: Arial, sans-serif;
     text-align: center;
+    background-color: #000;
 }
 
 /* Netflix Header Styling */
@@ -63,6 +64,185 @@ nav a:hover {
     width: 35px;
     border-radius: 50%;
     cursor: pointer;
+}
+
+/* Background Video Banner */
+.banner {
+    position: relative;
+    width: 100%;
+    height: 80vh;
+    overflow: hidden;
+}
+
+.background-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+.banner-content {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    color: white;
+    top: 30%;
+}
+
+.banner-content h1 {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.banner-content p {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+
+.btn {
+    padding: 10px 20px;
+    background: red;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    margin: 10px;
+}
+
+.btn:hover {
+    background: darkred;
+}
+
+/* Movie & Show Rows */
+.row {
+    padding: 20px;
+    position: relative;
+}
+
+.row h2 {
+    margin-left: 10px;
+    color: white;
+    text-align: left;
+}
+
+/* Wrapper for rows to position scroll buttons correctly */
+.row-wrapper {
+    display: flex;
+    align-items: center;
+    position: relative;
+    z-index: 4;
+}
+
+.row-container {
+    display: flex;
+    overflow-x: auto; /* Enable horizontal scrolling */
+    gap: 10px;
+    padding: 10px;
+    scroll-behavior: smooth;
+    white-space: nowrap;
+    scrollbar-width: none; /* Hide scrollbar for a cleaner look */
+}
+
+.row-container::-webkit-scrollbar {
+    display: none;
+}
+
+.card {
+    position: relative;
+    width: 200px;
+    height: 300px;
+    flex: 0 0 auto; /* Keep size fixed */
+    margin: 0 5px;
+    transition: transform 0.3s ease-in-out;
+    cursor: pointer;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+/* ✅ Netflix-like Hover Effect */
+.card:hover {
+    transform: scale(1.2);  /* Zoom in */
+    z-index: 3;  /* Bring it to front */
+}
+.card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.card p {
+    text-align: center;
+    color: white;
+    margin-top: 5px;
+}
+
+/* Left & Right Scroll Buttons */
+.scroll-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    font-size: 30px;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 50%;
+    z-index: 10;
+    transition: background 0.3s ease-in-out;
+}
+
+.scroll-btn.left {
+    left: 10px;
+}
+
+.scroll-btn.right {
+    right: 10px;
+}
+
+.scroll-btn:hover {
+    background: rgba(0, 0, 0, 0.8);
+}
+
+/* Overlay for Play & Close Buttons */
+.card-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: none;
+    flex-direction: row;
+    justify-content: center;
+    gap: 20px;
+    align-items: center;
+    width: 100%;
+}
+
+.card:hover .card-overlay {
+    display: flex;
+}
+
+/* 🎬 Play & Close Icons */
+.icon {
+    font-size: 15px;
+    padding: 10px;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out;
+}
+
+.play-icon:hover {
+    background-color: red;
+}
+
+.close-icon:hover {
+    background-color: gray;
 }
 
 /* Netflix Footer Styling */
@@ -129,6 +309,8 @@ footer {
     font-size: 14px;
     cursor: pointer;
 }
+
+
 
 /* Copyright */
 .footer-copy {
