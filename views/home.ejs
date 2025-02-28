@@ -2,14 +2,69 @@
 <html lang="en">
 <head>
     <link rel="stylesheet" href="/css/styles.css">
+    <script defer src="/script/script.js"></script>
     <title>Netflix Clone</title>
 </head>
 <body>
-    
+
     <%- include('partials/header') %>
-    <h1>Welcome to Netflix Clone</h1>
-    <a href="/movies">Browse Movies</a>
-    <a href="/shows">Browse TV Shows</a>
+
+    <!-- 🎬 Background Video Banner -->
+    <section class="banner">
+        <video autoplay muted loop class="background-video">
+            <source src="/videos/banner.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div class="banner-content">
+            <h1>Unlimited Movies, TV Shows, and More</h1>
+            <p>Watch anywhere. Cancel anytime.</p>
+            <a href="/movies" class="btn">Browse Movies</a>
+            <a href="/shows" class="btn">Browse TV Shows</a>
+        </div>
+    </section>
+
+    <section class="row">
+        <h2>Trending Movies</h2>
+        <div class="row-wrapper">
+            <button class="scroll-btn left" data-row="movies-row" data-direction="left">❮</button>
+            <div class="row-container" id="movies-row">
+                <% movies.forEach(movie => { %>
+                    <div class="card">
+                        <img src="<%= movie.image %>" alt="<%= movie.title %>">
+                        <div class="card-overlay">
+                            <span class="icon play-icon">▶</span>
+                            <span class="icon close-icon">ⓧ</span>
+                        </div>
+                        <p><%= movie.title %></p>
+                    </div>
+                <% }) %>
+            </div>
+            <button class="scroll-btn right" data-row="movies-row" data-direction="right">❯</button>
+        </div>
+    </section>
+    
+    <section class="row">
+        <h2>Popular TV Shows</h2>
+        <div class="row-wrapper">
+            <button class="scroll-btn left" data-row="shows-row" data-direction="left">❮</button>
+            <div class="row-container" id="shows-row">
+                <% shows.forEach(show => { %>
+                    <div class="card">
+                        <img src="<%= show.image %>" alt="<%= show.title %>">
+                        <div class="card-overlay">
+                            <span class="icon play-icon">▶</span>
+                            <span class="icon close-icon">ⓧ</span>
+                        </div>
+                        <p><%= show.title %></p>
+                    </div>
+                <% }) %>
+            </div>
+            <button class="scroll-btn right" data-row="shows-row" data-direction="right">❯</button>
+        </div>
+    </section>
+    
+
     <%- include('partials/footer') %>
+
 </body>
 </html>
