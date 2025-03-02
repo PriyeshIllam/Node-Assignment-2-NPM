@@ -11,6 +11,8 @@ module.exports = [
     { id: 10, title: "Mind hunter", year: 2008, image: "/images/Mind hunter.jpg", description: "A high school teacher turns to crime." },
     { id: 11, title: "Sherlockholms", year: 2016, image: "/images/Sherlockholms.jpg", description: "Mysteries unfold in a small town." },
     { id: 12, title: "The Queens Gambit", year: 2016, image: "/images/The Queens Gambit.jpg", description: "Mysteries unfold in a small town." },
-    { id: 11, title: "The Good Doctor", year: 2016, image: "/images/The Good Doctor.jpg", description: "Mysteries unfold in a small town." },
-    { id: 12, title: "blacklist", year: 2016, image: "/images/blacklist.jpg", description: "Mysteries unfold in a small town." }
+    { id: 13, title: "The Good Doctor", year: 2016, image: "/images/The Good Doctor.jpg", description: "Mysteries unfold in a small town." },
+    { id: 14, title: "blacklist", year: 2016, image: "/images/blacklist.jpg", description: "Mysteries unfold in a small town." },
+    { id: 15, title: "Lucifer", year: 2016, image: "/images/lucifer.jpg", description: "Mysteries unfold in a small town." },
+    { id: 16, title: "The mentalist", year: 2016, image: "/images/mentalist.jpg", description: "Mysteries unfold in a small town." }
 ];
