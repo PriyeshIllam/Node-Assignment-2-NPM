@@ -1,13 +1,27 @@
-<%- include('partials/header') %>
-<h1>Movies</h1>
-<ul>
-    <% movies.forEach(movie => { %>
-        <li>
-            <a href="/movies/<%= movie.id %>">
-                <img src="<%= movie.image %>" alt="<%= movie.title %>">
-                <h2><%= movie.title %> (<%= movie.year %>)</h2>
-            </a>
-        </li>
-    <% }) %>
-</ul>
-<%- include('partials/footer') %>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="/css/styles.css">
+    <title>Movies</title>
+</head>
+<body class="movies-page"> <!-- Add a class here -->
+
+    <%- include('partials/header') %>
+
+    <h1 class="movies-title">Movies</h1>
+
+    <ul class="item-grid-container">
+        <% movies.forEach(movie => { %>
+            <li>
+                <a href="/movies/<%= movie.id %>">
+                    <img src="<%= movie.image %>" alt="<%= movie.title %>">
+                    <h2><%= movie.title %> (<%= movie.year %>)</h2>
+                </a>
+            </li>
+        <% }) %>
+    </ul>
+
+    <%- include('partials/footer') %>
+
+</body>
+</html>
