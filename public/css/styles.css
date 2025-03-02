@@ -316,3 +316,66 @@ footer {
 .footer-copy {
     margin-top: 15px;
 }
+
+
+/* Movies page-specific background */
+.movies-page {
+    background: url('/images/moviebg.jpg') no-repeat center center fixed;
+    background-size: cover;
+}
+/* Movies page title */
+.movies-title {
+    text-align: center;
+    font-size: 32px;
+    font-weight: bold;
+    margin: 20px 0;
+    text-transform: uppercase;
+    color: aqua;
+    text-align: left;
+}
+
+/* Movies grid layout */
+.item-grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Responsive grid */
+    gap: 20px;
+    padding: 20px;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.6); /* Dark transparent background */
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.8); /* Soft shadow effect */
+}
+
+/* Movie list items */
+.item-grid-container li {
+    list-style: none;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.9)); /* Subtle gradient */
+    border-radius: 15px;
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    text-align: center;
+    box-shadow: 0px 5px 15px rgba(255, 255, 255, 0.1); /* Light outer shadow */
+}
+
+/* Consistent movie images */
+.item-grid-container img {
+    width: 200px; /* Fixed width */
+    height: 300px; /* Fixed height */
+    object-fit: cover; /* Crop to fill the container */
+    border-radius: 15px 15px 0 0;
+}
+
+/* Hover effect */
+.item-grid-container li:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 10px 20px rgba(255, 255, 255, 0.3); /* Stronger glow effect */
+}
+
+
+/* Movie titles */
+.item-grid-container h2 {
+    font-size: 16px;
+    color: white;
+    padding: 10px;
+}
