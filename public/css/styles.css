@@ -319,12 +319,12 @@ footer {
 
 
 /* Movies page-specific background */
-.movies-page {
+.item-page {
     background: url('/images/moviebg.jpg') no-repeat center center fixed;
     background-size: cover;
 }
 /* Movies page title */
-.movies-title {
+.item-title {
     text-align: center;
     font-size: 32px;
     font-weight: bold;
