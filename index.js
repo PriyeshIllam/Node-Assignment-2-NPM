@@ -23,9 +23,23 @@ app.get("/movies", (req, res) => {
     res.render("movies", { movies }); // ✅ Pass 'movies' to EJS
 });
 
+// ✅ Add Route for Individual Movie Pages
+app.get("/movies/:id", (req, res) => {
+    const movie = movies.find(m => m.id == req.params.id);
+    if (!movie) return res.status(404).send("Movie not found");
+    res.render("movie-detail", { movie });
+});
+
 // shows Route - Pass the data
 app.get("/shows", (req, res) => {
     res.render("shows", { shows }); // ✅ Pass 'shows' to EJS
+});
+
+// ✅ Add Route for Individual Movie Pages
+app.get("/shows/:id", (req, res) => {
+    const show = shows.find(m => m.id == req.params.id);
+    if (!show) return res.status(404).send("Show not found");
+    res.render("show-detail", { show });
 });
 
 const PORT = process.env.PORT || 3000;
