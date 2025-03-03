@@ -379,3 +379,104 @@ footer {
     color: white;
     padding: 10px;
 }
+
+/* 🎬 Fix Movie Detail Container Layout */
+.item-detail-container {
+    display: flex;
+    flex-direction: row; /* Ensures side-by-side layout */
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    max-width: 900px;
+    margin: 50px auto;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.8);
+    border-radius: 15px;
+    box-shadow: 0px 4px 10px rgba(255, 0, 0, 0.5);
+    position: relative;
+    color: rgb(251, 255, 255);
+}
+
+/* 🖼 Fix Image Wrapper */
+.item-image-wrapper {
+    position: relative;
+    width: 300px;
+    height: 450px;
+}
+
+/* 🖼 Fix Image */
+.item-detail-image {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    object-fit: cover;
+    transition: transform 0.3s ease-in-out;
+}
+
+/* 🎭 Overlay for Play Button */
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+/* ▶️ Show Play Button Only on Hover */
+.item-image-wrapper:hover .overlay {
+    opacity: 1;
+}
+
+/* ▶️ Play Button */
+.play-button {
+    background: rgba(255, 255, 255, 0.2);
+    border: none;
+    padding: 15px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 24px;
+    color: white;
+    transition: transform 0.2s ease-in-out;
+}
+
+.play-button:hover {
+    transform: scale(1.2);
+    background: rgba(255, 255, 255, 0.4);
+}
+
+/* ❌ Close Button */
+.close-button {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    color: white;
+    font-size: 28px;
+    text-decoration: none;
+    transition: transform 0.2s ease-in-out;
+}
+
+.close-button:hover {
+    transform: scale(1.2);
+    color: #e50914; /* Netflix Red */
+}
+
+/* 📱 Responsive Fix */
+@media (max-width: 768px) {
+    .item-detail-container {
+        flex-direction: column;
+        text-align: center;
+        padding: 15px;
+    }
+
+    .item-image-wrapper {
+        width: 90%;
+        height: auto;
+    }
+}
