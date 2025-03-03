@@ -1,6 +1,40 @@
-<%- include('partials/header') %>
-<h1><%= movie.title %> (<%= movie.year %>)</h1>
-<img src="<%= movie.image %>" alt="<%= movie.title %>">
-<p><%= movie.description %></p>
-<a href="/movies">Back to Movies</a>
-<%- include('partials/footer') %>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title><%= movie.title %></title>
+    <link rel="stylesheet" href="/css/styles.css">
+    <script src="https://kit.fontawesome.com/YOUR_FONT_AWESOME_KIT.js" crossorigin="anonymous"></script>
+</head>
+<body class="item-page"> 
+
+    <%- include('partials/header') %>
+
+    <div class="item-detail-container">
+        <!-- Close Button to Go Back -->
+    <a href="/movies" class="close-button">
+        <i class="fas fa-times"></i>
+    </a>
+        <!-- Movie Image with Play Button -->
+        <div class="item-image-wrapper">
+            <img src="<%= movie.image %>" alt="<%= movie.title %>" class="item-detail-image">
+            <div class="overlay">
+                <button class="play-button">
+                    <i class="fas fa-play"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Movie Details -->
+        <div class="item-detail-info">
+            <h1><%= movie.title %> (<%= movie.year %>)</h1>
+            <p><%= movie.description %></p>
+            <p><strong>Director:</strong> <%= movie.director %></p>
+        </div>
+    </div>
+
+    
+
+    <%- include('partials/footer') %>
+
+</body>
+</html>
