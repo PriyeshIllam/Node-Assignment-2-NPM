@@ -1,8 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
-    console.log("script.js loaded successfully!"); // Log when script loads
 
     function scrollRow(rowId, direction) {
-        console.log(`Scrolling ${direction} in row: ${rowId}`); // Log scroll event
 
         const container = document.getElementById(rowId);
         if (!container) {
@@ -20,7 +18,6 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     document.querySelectorAll(".scroll-btn").forEach((button) => {
-        console.log("Scroll button found:", button); // Log each button found
 
         button.addEventListener("click", function () {
             const rowId = this.dataset.row;

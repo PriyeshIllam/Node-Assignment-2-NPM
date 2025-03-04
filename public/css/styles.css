@@ -158,7 +158,6 @@ nav a:hover {
     flex: 0 0 auto; /* Keep size fixed */
     margin: 0 5px;
     transition: transform 0.3s ease-in-out;
-    cursor: pointer;
     border-radius: 5px;
     overflow: hidden;
 }
