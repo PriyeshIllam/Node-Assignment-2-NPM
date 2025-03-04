@@ -4,7 +4,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
         const container = document.getElementById(rowId);
         if (!container) {
-            console.error(`No element found with ID: ${rowId}`);
             return;
         }
 
@@ -14,7 +13,6 @@ document.addEventListener("DOMContentLoaded", function () {
             behavior: "smooth",
         });
 
-        console.log(`Scrolled ${direction} in row: ${rowId}`);
     }
 
     document.querySelectorAll(".scroll-btn").forEach((button) => {
@@ -22,7 +20,6 @@ document.addEventListener("DOMContentLoaded", function () {
         button.addEventListener("click", function () {
             const rowId = this.dataset.row;
             const direction = this.dataset.direction;
-            console.log(`Button clicked! Row: ${rowId}, Direction: ${direction}`);
             scrollRow(rowId, direction);
         });
     });
