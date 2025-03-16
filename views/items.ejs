@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title><%= pageTitle %></title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body class="item-page"> 
+
+    <%- include('partials/header') %>
+
+    <h1 class="item-title"><%= pageTitle %></h1>
+
+    <ul class="item-grid-container">
+        <% items.forEach(item => { %>
+            <li>
+                <a href="/<%= itemType %>/<%= item.id %>">
+                    <img src="<%= item.image %>" alt="<%= item.title %>">
+                    <h2><%= item.title %> (<%= item.year %>)</h2>
+                </a>
+            </li>
+        <% }) %>
+    </ul>
+
+    <%- include('partials/footer') %>
+
+</body>
+</html>

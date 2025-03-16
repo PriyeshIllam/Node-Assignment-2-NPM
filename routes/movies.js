@@ -1,17 +1,26 @@
-const express = require('express');
-const router = express.Router();
-const movies = require('../data/movies'); // Ensure movies.js exports an array
+import express from "express";
+import movies from "../data/movies.js";
 
-// Route to display all movies
-router.get('/', (req, res) => {
-    res.render('movies', { movies }); // Render movies.ejs template
+const router = express.Router();
+
+router.get("/", (req, res) => {
+    res.render("items", { 
+        pageTitle: "Movies", 
+        items: movies, 
+        itemType: "movies" 
+    });
 });
 
-// Route to display a single movie detail page
-router.get('/:id', (req, res) => {
+router.get("/:id", (req, res) => {
     const movie = movies.find(m => m.id == req.params.id);
     if (!movie) return res.status(404).send("Movie not found");
-    res.render('movie-detail', { movie }); // Render movie-detail.ejs template
+
+    res.render("item-detail", { 
+        item: movie, 
+        itemType: "movies" 
+    });
 });
 
-module.exports = router;
+export default router;
+
+
