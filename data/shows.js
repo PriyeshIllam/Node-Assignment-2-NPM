@@ -1,4 +1,5 @@
-module.exports = [
+
+const shows = [
     { id: 1, title: "Breaking Bad", year: 2008, image: "/images/breakingbad.jpg", description: "A high school teacher turns to crime.", director: "Cristopher Nolan"},
     { id: 2, title: "Stranger Things", year: 2016, image: "/images/strangerthings.jpg", description: "Mysteries unfold in a small town.", director: "Cristopher Nolan" },
     { id: 3, title: "Squidgame", year: 2016, image: "/images/squidgame.jpg", description: "Mysteries unfold in a small town.", director: "Cristopher Nolan" },
@@ -16,3 +17,5 @@ module.exports = [
     { id: 15, title: "Lucifer", year: 2016, image: "/images/lucifer.jpg", description: "Mysteries unfold in a small town." , director: "Cristopher Nolan"},
     { id: 16, title: "The mentalist", year: 2016, image: "/images/mentalist.jpg", description: "Mysteries unfold in a small town." ,director: "Cristopher Nolan"}
 ];
+
+export default shows;
