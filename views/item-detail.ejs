@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title><%= item.title %></title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body class="item-page"> 
+
+    <%- include('partials/header') %>
+
+    <div class="item-detail-container">
+        <!-- Close Button to Go Back -->
+        <a href="/<%= itemType %>" class="close-button">
+            <span class="icon close-icon">ⓧ</span>
+        </a>
+
+        <!-- Item Image with Play Button -->
+        <div class="item-image-wrapper">
+            <img src="<%= item.image %>" alt="<%= item.title %>" class="item-detail-image">
+            <div class="overlay">
+                <button class="play-button">
+                    <span class="icon play-icon">▶</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Item Details -->
+        <div class="item-detail-info">
+            <h1><%= item.title %> (<%= item.year %>)</h1>
+            <p><%= item.description %></p>
+            <p><strong>Director:</strong> <%= item.director %></p>
+        </div>
+    </div>
+
+    <%- include('partials/footer') %>
+
+</body>
+</html>

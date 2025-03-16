@@ -1,15 +1,24 @@
-const express = require('express');
+import express from "express";
+import shows from "../data/shows.js";
+
 const router = express.Router();
-const shows = require('../data/shows');
 
-router.get('/', (req, res) => {
-    res.render('shows', { shows });
+router.get("/", (req, res) => {
+    res.render("items", { 
+        pageTitle: "shows", 
+        items: shows, 
+        itemType: "shows" 
+    });
 });
 
-router.get('/:id', (req, res) => {
-    const show = shows.find(s => s.id == req.params.id);
-    if (!show) return res.status(404).send("Show not found");
-    res.render('show-detail', { show });
+router.get("/:id", (req, res) => {
+    const movie = shows.find(m => m.id == req.params.id);
+    if (!movie) return res.status(404).send("Movie not found");
+
+    res.render("item-detail", { 
+        item: movie, 
+        itemType: "shows" 
+    });
 });
 
-module.exports = router;
+export default router;

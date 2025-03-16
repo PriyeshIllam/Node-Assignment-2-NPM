@@ -1,10 +1,18 @@
-const express = require("express");
-const path = require("path");
+import express from "express";
+import path from "path";
+import { fileURLToPath } from "url";
+// import movies from "./data/movies.js";
+import shows from "./data/shows.js";
+import movies from "./data/movies.js";
 
-const movies = require("./data/movies");
-const shows = require("./data/shows");
+import moviesRouter from "./routes/movies.js"; // ✅ Import the movies router
+import showsRouter from "./routes/shows.js"; // ✅ Import the movies router
 
 const app = express();
+
+// Resolve __dirname in ESM
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 // Set the views directory explicitly
 app.set("views", path.join(__dirname, "views"));
@@ -18,29 +26,12 @@ app.get("/", (req, res) => {
     res.render("home", { movies, shows });
 });
 
-// Movies Route - Pass the data
-app.get("/movies", (req, res) => {
-    res.render("movies", { movies }); // ✅ Pass 'movies' to EJS
-});
+// Use the Movies Router
+app.use("/movies", moviesRouter);
 
-// ✅ Add Route for Individual Movie Pages
-app.get("/movies/:id", (req, res) => {
-    const movie = movies.find(m => m.id == req.params.id);
-    if (!movie) return res.status(404).send("Movie not found");
-    res.render("movie-detail", { movie });
-});
+// Use the Shows Router
+app.use("/shows", showsRouter);
 
-// shows Route - Pass the data
-app.get("/shows", (req, res) => {
-    res.render("shows", { shows }); // ✅ Pass 'shows' to EJS
-});
-
-// ✅ Add Route for Individual Movie Pages
-app.get("/shows/:id", (req, res) => {
-    const show = shows.find(m => m.id == req.params.id);
-    if (!show) return res.status(404).send("Show not found");
-    res.render("show-detail", { show });
-});
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {

@@ -1,4 +1,4 @@
-module.exports = [
+const movies = [
     { id: 1, title: "1917", year: 2010, image: "/images/1917.jpg", description: "A mind-bending thriller by Christopher Nolan.", director: "Cristopher Nolan" },
     { id: 2, title: "Black Panther", year: 2014, image: "/images/blackpanther.jpg", description: "A space epic exploring time and love.", director: "Cristopher Nolan" },
     { id: 3, title: "Captain America", year: 2010, image: "/images/captainamerica.jpg", description: "A mind-bending thriller by Christopher Nolan.", director: "Cristopher Nolan" },
@@ -16,3 +16,5 @@ module.exports = [
     { id: 13, title: "Interstellar", year: 2010, image: "/images/interstellar.jpg", description: "A mind-bending thriller by Christopher Nolan.", director: "Cristopher Nolan" },
     { id: 14, title: "Inception1", year: 2014, image: "/images/inception1.jpg", description: "A space epic exploring time and love.", director: "Cristopher Nolan" }
 ];
+
+export default movies;
