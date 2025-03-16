@@ -234,6 +234,7 @@ nav a:hover {
     color: white;
     cursor: pointer;
     transition: background 0.3s ease-in-out;
+    z-index: 100;
 }
 
 .play-icon:hover {
@@ -426,6 +427,7 @@ footer {
     border-radius: 10px;
     opacity: 0;
     transition: opacity 0.3s ease-in-out;
+    z-index: 9999;
 }
 
 /* ▶️ Show Play Button Only on Hover */
