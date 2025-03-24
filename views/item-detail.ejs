@@ -1,13 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <title><%= item.title %></title>
-    <link rel="stylesheet" href="/css/styles.css">
-    <link rel=“stylesheet” href=“/css/favicon.css”>
-</head>
+    <%- include("partials/head", { title: pageTitle }) %>
 <body class="item-page"> 
 
-    <%- include('partials/header') %>
+    <%- include('partials/navbar') %>
 
     <div class="item-detail-container">
         <!-- Close Button to Go Back -->
