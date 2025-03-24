@@ -4,11 +4,13 @@ import shows from "../data/shows.js";
 const router = express.Router();
 
 router.get("/", (req, res) => {
-    res.render("items", { 
-        pageTitle: "shows", 
-        items: shows, 
-        itemType: "shows" 
-    });
+    if(shows){
+        res.render("items", { 
+            pageTitle: "Shows", 
+            items: shows, 
+            itemType: "shows" 
+        });
+    }
 });
 
 router.get("/:id", (req, res) => {
