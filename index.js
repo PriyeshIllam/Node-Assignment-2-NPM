@@ -1,10 +1,10 @@
 import express from "express";
 import path from "path";
 import { fileURLToPath } from "url";
-// import movies from "./data/movies.js";
+
 import shows from "./data/shows.js";
-//import movies from "./data/movies.js";
-console.log("Home route accessed"); // Debugging step
+import movies from "./data/movies.js";
+
 
 import moviesRouter from "./routes/movies.js"; // ✅ Import the movies router
 import showsRouter from "./routes/shows.js"; // ✅ Import the movies router
@@ -26,7 +26,6 @@ app.use(express.static(path.join(__dirname, "public")));
 app.get("/", (req, res) => {
     const safeMovies = movies || [];
     const safeShows = shows || [];
-    console.log("Safe Movies:", safeMovies); // Print safeMovies to the console
     res.render("home", { movies: safeMovies, shows: safeShows });
 });
 
